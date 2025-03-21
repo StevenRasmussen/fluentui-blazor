@@ -280,6 +280,10 @@ public partial class FluentAutocomplete<TOption> : ListComponentBase<TOption> wh
     /// <summary />
     protected override bool ShouldRender() => _shouldRender;
 
+    private string RootClass => this.MaximumSelectedOptions == 1
+        ? "singleselect"
+        : "multiselect";
+
     /// <summary />
     protected override async Task InputHandlerAsync(ChangeEventArgs e)
     {
